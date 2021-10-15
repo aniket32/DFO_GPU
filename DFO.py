@@ -4,17 +4,17 @@ from time import perf_counter
 import math as m
 # FITNESS FUNCTION (SPHERE FUNCTION)
 @jit(nopython=True)
-# def f(x):  # x IS A VECTOR REPRESENTING ONE FLY
-#     sum = 0.0
-#     for i in range(len(x)):
-#         sum = sum + np.power(x[i], 2)
-#     return sum
-
-def f(x):
-    sum = 10*len(x)
+def f(x):  # x IS A VECTOR REPRESENTING ONE FLY
+    sum = 0.0
     for i in range(len(x)):
-        sum += x[1]**2 - (10*m.cos(2*m.pi*x[i]))
+        sum = sum + np.power(x[i], 2)
     return sum
+
+# def f(x):
+#     sum = 10*len(x)
+#     for i in range(len(x)):
+#         sum += x[1]**2 - (10*m.cos(2*m.pi*x[i]))
+#     return sum
 lis = []
 t0= perf_counter()
 for i in range(29):
